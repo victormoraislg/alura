@@ -8,4 +8,12 @@ class Item {
         $this->valor = $valor;
     }
 
+    public function getNome(){
+        return $this->nome;
+    }
+
+    public function getValor(){
+        return $this->valor;
+    }
+
 }

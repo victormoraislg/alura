@@ -7,7 +7,7 @@
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
 
-    $orcamento = new Orcamento(1000);
+    $orcamento = new Orcamento(500);
     $calculadoraDeImposto = new CalculadoraDeImpostos();
 
     $icms = $calculadoraDeImposto->realizaCalculo($orcamento, new ICMS());
@@ -17,9 +17,8 @@
     $orcamento->adicionarItem(new Item('Cadeira', 150));
     $orcamento->adicionarItem(new Item('Mesa', 250));
     $orcamento->adicionarItem(new Item('Prato', 15));
-    $orcamento->adicionarItem(new Item('Talheres', 45));
-    $orcamento->adicionarItem(new Item('Panela de pressão', 150));
-    $orcamento->adicionarItem(new Item('Arroz', 10));
+    $orcamento->adicionarItem(new Item('Lapis', 45));
+    $orcamento->adicionarItem(new Item('Caneta', 150));
 
     echo 'Valor do Orcamento -> ' . $orcamento->getValor();
     echo '<br>Quantidade de Itens -> ' . count($orcamento->getItens());
