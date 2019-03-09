@@ -20,11 +20,16 @@
     $orcamento->adicionarItem(new Item('Lapis', 45));
     $orcamento->adicionarItem(new Item('Caneta', 150));
 
+    $icpp = $calculadoraDeImposto->realizaCalculo($orcamento, new ICPP());
+    $ikcv = $calculadoraDeImposto->realizaCalculo($orcamento, new IKCV());
+
     echo 'Valor do Orcamento -> ' . $orcamento->getValor();
     echo '<br>Quantidade de Itens -> ' . count($orcamento->getItens());
     echo '<br>ICMS ->' . $icms;
     echo '<br>ISS ->' . $iss;
     echo '<br>ICCC ->' . $iccc;
+    echo '<br>ICPP ->' . $icpp;
+    echo '<br>IKCV ->' . $ikcv;
     
     $calculadoraDeDescontos = new CalculadoraDeDescontos();
     $desconto = $calculadoraDeDescontos->darDesconto($orcamento);
