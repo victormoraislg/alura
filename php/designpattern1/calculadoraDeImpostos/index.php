@@ -19,9 +19,11 @@
     $orcamento->adicionarItem(new Item('Prato', 15));
     $orcamento->adicionarItem(new Item('Lapis', 45));
     $orcamento->adicionarItem(new Item('Caneta', 150));
+    $orcamento->adicionarItem(new Item('Caneta', 150));
 
     $icpp = $calculadoraDeImposto->realizaCalculo($orcamento, new ICPP());
     $ikcv = $calculadoraDeImposto->realizaCalculo($orcamento, new IKCV());
+    $ihit = $calculadoraDeImposto->realizaCalculo($orcamento, new IHIT());
 
     echo 'Valor do Orcamento -> ' . $orcamento->getValor();
     echo '<br>Quantidade de Itens -> ' . count($orcamento->getItens());
@@ -30,6 +32,7 @@
     echo '<br>ICCC ->' . $iccc;
     echo '<br>ICPP ->' . $icpp;
     echo '<br>IKCV ->' . $ikcv;
+    echo '<br>IHIT ->' . $ihit;
     
     $calculadoraDeDescontos = new CalculadoraDeDescontos();
     $desconto = $calculadoraDeDescontos->darDesconto($orcamento);
